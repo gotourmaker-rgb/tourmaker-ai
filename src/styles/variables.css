@@ -1,0 +1,94 @@
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Premium Color Palette */
+  --pk-primary: 222, 47%, 11%;     /* #0F172A - Deep Navy */
+  --pk-accent: 45, 93%, 47%;       /* #F4C430 - Saffron/Gold */
+  --pk-surface: 0, 0%, 100%;       /* White */
+  --pk-background: 210, 40%, 98%;  /* Soft Gray Blue */
+  
+  /* Text Colors */
+  --tc-main: 222, 47%, 11%;
+  --tc-secondary: 215, 19%, 35%;
+  --tc-muted: 215, 16%, 47%;
+  --tc-light: 0, 0%, 100%;
+
+  /* Dark Mode Support (Implicit or Toggable) */
+  --dark-surface: 222, 47%, 13%;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+
+  /* Spacing */
+  --sp-xs: 0.5rem;
+  --sp-sm: 0.75rem;
+  --sp-md: 1rem;
+  --sp-lg: 1.5rem;
+  --sp-xl: 2rem;
+  --sp-2xl: 3rem;
+
+  /* Radius */
+  --rd-sm: 8px;
+  --rd-md: 12px;
+  --rd-lg: 20px;
+  --rd-full: 9999px;
+
+  /* Transitions */
+  --tx-fast: 0.2s ease;
+  --tx-med: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: hsl(var(--pk-background));
+  color: hsl(var(--tc-main));
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--rd-lg);
+}
+
+.btn-primary {
+  background: hsl(var(--pk-primary));
+  color: hsl(var(--tc-light));
+  padding: var(--sp-sm) var(--sp-lg);
+  border-radius: var(--rd-full);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: var(--tx-fast);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px hsl(var(--pk-primary));
+}
+
+.title-gradient {
+  background: linear-gradient(135deg, hsl(var(--pk-primary)) 0%, hsl(210, 29%, 24%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
